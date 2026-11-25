@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Midjourney — ใช้ยังไงให้คุ้ม (Standard รายปี)</title>
+<style>
+:root{--ac:#0f766e;--ac-soft:#e6f4f2;--tx:#1f2933;--mu:#5b6770;--bd:#dde3e8;--bg:#fafbfc;--warn:#fff7e6;--warn-bd:#f0c36d}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:'Sarabun','Noto Sans Thai',system-ui,-apple-system,sans-serif;font-size:17px;line-height:1.7}
+.wrap{max-width:900px;margin:0 auto;padding:20px 16px 60px}
+header{padding:28px 0 12px;border-bottom:3px solid var(--ac)}
+h1{margin:0 0 6px;font-size:2.4rem;line-height:1.3;color:var(--ac)}
+.meta{color:var(--mu);font-size:.92rem}
+h2{margin:40px 0 12px;font-size:1.75rem;line-height:1.35;border-left:6px solid var(--ac);padding-left:10px}
+h3{margin:18px 0 6px;font-size:1.35rem;line-height:1.4}
+code{background:#eef1f4;padding:1px 6px;border-radius:4px;font-size:.9em;font-family:ui-monospace,Menlo,monospace}
+.card{background:#fff;border:1px solid var(--bd);border-radius:10px;padding:14px 18px}
+.tldr{background:var(--ac-soft);border:1px solid #b9ddd8}
+.tldr ol{margin:6px 0 0;padding-left:22px}
+.tldr li{margin:8px 0}
+.tip{background:var(--warn);border:1px solid var(--warn-bd);border-radius:8px;padding:8px 12px;margin:10px 0;font-size:.95rem}
+.tip b:first-child{color:#8a5a00}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cols ul{margin:6px 0 0;padding-left:20px}
+.good h3{color:var(--ac)}.bad h3{color:#b42318}
+table{width:100%;border-collapse:collapse;background:#fff;font-size:.95rem}
+th,td{border:1px solid var(--bd);padding:8px 10px;text-align:left;vertical-align:top}
+th{background:var(--ac-soft)}
+.tw{overflow-x:auto}
+.pill{display:inline-block;padding:1px 10px;border-radius:99px;font-size:.85rem;font-weight:600;white-space:nowrap}
+.hi{background:#d1f0e6;color:#065f46}.md{background:#fdebc8;color:#8a5a00}.lo{background:#fbd9d6;color:#9b1c13}
+figure{margin:0}
+figcaption{font-size:.88rem;color:var(--mu);margin-top:4px}
+img{max-width:100%;height:auto;border-radius:8px;border:1px solid var(--bd);display:block}
+.test{display:grid;grid-template-columns:260px 1fr;gap:16px;margin:14px 0;align-items:start}
+.test .nums{margin:0;padding-left:20px}
+.test.two{grid-template-columns:260px 260px 1fr}
+.ok{color:#065f46;font-weight:700}.part{color:#8a5a00;font-weight:700}
+footer{margin-top:40px;color:var(--mu);font-size:.9rem}
+a{color:var(--ac)}
+ul.src{padding-left:20px;font-size:.93rem}
+ul.src li{margin:3px 0}
+@media(max-width:720px){.cols,.test,.test.two{grid-template-columns:1fr}h1{font-size:1.9rem}h2{font-size:1.5rem}h3{font-size:1.25rem}body{font-size:16px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+<h1>Midjourney — ใช้ยังไงให้คุ้ม (Standard รายปี)</h1>
+<div class="meta">สรุปสำหรับ Mr.Foxx · ตรวจข้อมูล 2026-11-26 · แหล่งหลัก: docs.midjourney.com (อ่านจากเอกสารทางการ) + ผลทดสอบจริงกับบัญชีท่านวันนี้ · ส่วนที่ติดป้าย <b>คำแนะนำ</b> คือความเห็น ไม่ใช่ข้อเท็จจริง</div>
+</header>
+
+<!-- 1 -->
+<h2>1. สรุป 30 วินาที</h2>
+<div class="card tldr">
+<ol>
+<li><b>ใช้ทำอะไรดีที่สุด:</b> วอลเปเปอร์ (wallpaper), ลายกระเบื้อง/แพทเทิร์นแบบ <code>--tile</code> และภาพ keyvisual ของ SwedishCandy, งานศิลป์สำหรับขาย Etsy ที่ผ่านการเลือก/แก้เองและบอกว่าเป็น AI, และคลิปสั้นวนลูปจากภาพนิ่ง</li>
+<li><b>กฎ Fast vs Relax:</b> ภาพ SD, <code>--hd</code> และ Creative upscale (ที่ทดสอบวันนี้) รันใน Relax ได้ ไม่เสีย Fast จากการทดสอบวันนี้ · <b>มีแต่วิดีโอที่กิน Fast</b> (SD batch 1 ≈ 1 นาที, HD ≈ 7 นาที) · Fast 15 ชม./เดือนหมดอายุทุกเดือน → <b>คำแนะนำ:</b> เอาไปใช้กับวิดีโอ</li>
+<li><b>แผนยกเลิกต่ออายุแล้ว:</b> หน้า Account แสดง "Active until Nov 26, 2027" และมีปุ่ม "Uncancel plan" (= ไม่ต่ออายุอัตโนมัติ) ใช้งานได้ถึง 2027-11-26 · เรื่องขอคืนเงิน: เอกสารระบุว่าทำได้เฉพาะเมื่อใช้ GPU ตลอดชีพ &lt; 20 นาที — วันนี้ทดสอบไป 10 งาน (Fast ใช้ 8 นาที + งาน Relax) น่าจะเกินแล้ว แต่ให้ <b>ตรวจในหน้า Manage Subscription</b> เอง</li>
+<li><b>viora/venita = ใช้ทำฉากหลังเท่านั้น</b> (พื้น/แท่นวางเปล่า) แล้วนำรูปสินค้าจริงไปวางซ้อนใน Canva · ห้ามให้ MJ วาดเครื่องประดับ (ทดสอบก่อนหน้านี้ ความเหมือนสินค้าไม่ผ่าน 0/4)</li>
+<li><b>ต้องติดป้ายว่าเป็น AI</b> บน Shopee / TikTok / Etsy ตามกฎแต่ละแพลตฟอร์ม (ดูหัวข้อ 7) · และเพราะ Standard ไม่มี Stealth (โหมดซ่อนผลงาน) ผลงานเป็นสาธารณะโดยค่าเริ่มต้น</li>
+</ol>
+</div>
+
+<!-- 2 -->
+<h2>2. Midjourney เก่ง / ไม่เก่งเรื่องอะไร</h2>
+<div class="cols">
+<div class="card good"><h3>เก่ง</h3>
+<ul>
+<li>ลุคสวยแบบ art direction ตั้งแต่ค่าเริ่มต้น (แสง สี ระยะชัดตื้น) — เหมาะ concept art, moodboard, ภาพ editorial</li>
+<li>คุมสไตล์ด้วย <code>--sref</code> (รูปหรือโค้ด), Moodboard, Personalization</li>
+<li><code>--tile</code> ทำลายต่อเนื่อง (V8.1/8.2)</li>
+<li>แปลงภาพนิ่งเป็นวิดีโอ 5 วินาที ต่อได้ถึง 21 วินาที</li>
+<li>ภาพ HD ขนาด 2048 px ขึ้นไปในโหมด Relax</li>
+</ul></div>
+<div class="card bad"><h3>ไม่เก่ง</h3>
+<ul>
+<li>แก้ภาพละเอียดแม่นยำ — รีวิวภายนอก (andrew.ooo / CuriousRefuge) ระบุว่าเน้น "first-generation aesthetics"</li>
+<li>ความเหมือนสินค้า: เคส Ba0028 ของ viora ไม่ผ่าน 0/4 ขณะที่ Flow ทำได้</li>
+<li>ตัวอักษร: เอกสารทางการบอกว่าเหมาะกับอักษรละติน → ข้อความไทยไม่น่าเชื่อถือ (คำแนะนำ: อย่าใส่ข้อความ/ราคาในภาพ)</li>
+<li>พื้นหลังโปร่งใส และขนาดภาพอิสระ ทำไม่ได้</li>
+<li>พิมพ์ใหญ่: 2048 px ที่ 300 DPI ≈ 6.8 นิ้ว ต้องใช้ตัวขยายภายนอก</li>
+</ul></div>
+</div>
+<div class="tip"><b>หมายเหตุ:</b> ไม่มี blind benchmark ใดจัดอันดับ Midjourney (Artificial Analysis และ arena.ai Art ไม่มี MJ อยู่ในรายการ น่าจะเพราะไม่มี API) ดังนั้นคำว่า "สวยที่สุด" เป็นความเห็นจากรีวิว ไม่ใช่ผลวัดควบคุม</div>
+
+<!-- 3 -->
+<h2>3. ใช้กับธุรกิจไหน</h2>
+<p style="margin:0 0 8px;color:var(--mu);font-size:.93rem">ระดับความเหมาะสมและข้อควรทำ/ไม่ควรทำ เป็น <b>คำแนะนำ</b> ที่สรุปจากข้อเท็จจริงของเอกสารและผลทดสอบ น้ำหนักทุกธุรกิจเท่ากัน</p>
+<div class="tw"><table>
+<tr><th>ธุรกิจ</th><th>เหมาะแค่ไหน</th><th>ควรใช้ทำ</th><th>ไม่ควรทำ</th></tr>
+<tr><td>viora / venita</td><td><span class="pill md">กลาง</span></td><td>ฉาก/พร็อพเปล่า (แท่นหิน, ชายทะเล) แล้ววางรูปสินค้าจริง · moodboard/sref ของแบรนด์ · วิดีโอฉากหลัง</td><td>ให้ MJ วาดตัวเครื่องประดับ</td></tr>
+<tr><td>SwedishCandy</td><td><span class="pill hi">สูง</span></td><td>keyvisual · ภาพประกอบ · แพทเทิร์น <code>--tile</code> · moodboard</td><td>ทำโลโก้ · ข้อความสุดท้ายหรือข้อความไทยในภาพ</td></tr>
+<tr><td>wallpaper</td><td><span class="pill hi">สูง</span></td><td>เครื่องมือหลัก · <code>--hd</code> 9:16 / 16:9 · ชุดเดียวกันด้วยโค้ด sref · ร่างใน Relax</td><td>ขายงานพิมพ์ขนาดใหญ่โดยไม่ใช้ upscaler ภายนอก · หวังลิขสิทธิ์แข็งแรงจากภาพดิบ</td></tr>
+<tr><td>Etsy digital</td><td><span class="pill hi">สูง</span></td><td>งานที่คัด/แก้เอง + ระบุว่าใช้ AI · ภาพ preview ตรงกับสิ่งที่ผู้ซื้อได้จริง</td><td>ขาย prompt bundle · แพทเทิร์น/สูตรที่ AI สร้าง · ลงขายอัตโนมัติจำนวนมาก (ผิด ToS ข้อห้ามใช้เครื่องมืออัตโนมัติ)</td></tr>
+<tr><td>family</td><td><span class="pill lo">ต่ำ–กลาง</span></td><td>ฉากสไตล์นิทาน</td><td>หวังใบหน้าเหมือนจริง · ใช้รูปที่ไม่อยากให้เห็นสาธารณะ</td></tr>
+<tr><td>social-ads</td><td><span class="pill md">กลาง</span></td><td>คลิปวนลูป 5–21 วินาทีจากภาพนิ่ง · ฉากหลัง · ติดป้าย AI ตามกฎ TikTok</td><td>ใส่ข้อความ/ราคาในภาพ · ทำวิดีโอ HD ปริมาณมาก (Fast หมดเร็ว)</td></tr>
+</table></div>
+
+<!-- 4 -->
+<h2>4. ผลทดสอบจริงกับบัญชีท่าน</h2>
+<p>ทดสอบ 2026-11-26 ผ่าน Chrome บัญชีของท่าน (V8.2) รวม 10 งาน · Fast คงเหลือ 14 ชม. 39 นาที → 14 ชม. 31 นาที (<b>ใช้ 8 นาที ทั้งหมดเป็นวิดีโอ</b>) · ผลทดสอบนี้ชนะข้อสันนิษฐานจากเอกสารในจุดที่ขัดกัน</p>
+
+<h3>T2 — ฉากหลังสำหรับ viora/venita <span class="ok">ผ่าน</span></h3>
+<div class="test">
+<figure><img src="img/T2.jpg" alt="T2 backdrop แท่นวางสินค้าริมทะเล" loading="lazy"><figcaption>แท่นวางเปล่าริมทะเล</figcaption></figure>
+<ul class="nums">
+<li><code>--hd</code> รันใน <b>Relax</b> ใช้ Fast = 0 · ~1 นาที 50 วินาที · 2048×2048</li>
+<li>ใช้เป็นฉากหลังสำหรับวางรูปสินค้าจริงได้ (ขัดกับสมมติฐานเดิมว่าภาพ HD ต้องใช้ Fast)</li>
+<li>คำแนะนำ: ซ้อนรูปสินค้าจริงใน Canva แล้วตรวจแสง/ขอบเงาให้เข้ากัน (ยังไม่ได้ทดสอบขั้นซ้อนภาพ)</li>
+</ul>
+</div>
+
+<h3>T3 — ลาย <code>--tile</code> ของ SwedishCandy <span class="part">ผ่านบางส่วน</span></h3>
+<div class="test two">
+<figure><img src="img/T3.jpg" alt="T3 ลายกระเบื้อง 1 ชิ้น" loading="lazy"><figcaption>ชิ้นเดียว 1024×1024 (SD)</figcaption></figure>
+<figure><img src="img/T3-2x2.jpg" alt="T3 ต่อกัน 2x2" loading="lazy"><figcaption>ต่อกัน 2×2 ไม่เห็นรอยต่อ</figcaption></figure>
+<ul class="nums">
+<li>ต่อกัน 2×2 เรียบสนิท และ <code>--sref 596994346</code> ให้ลุคเหมือนกันทั้ง 3 ภาพ</li>
+<li>แต่โค้ดนั้น <b>ทับคำว่า "pastel"</b> ออกมาเป็นส้มเข้ม/กรมท่า/ครีม</li>
+<li>บทเรียน: <code>--sref random</code> อาจทับคำบอกโทนสี → <b>คำแนะนำ:</b> เลือกโค้ดจากลุคที่ต้องการก่อน แล้วค่อยเขียน prompt</li>
+</ul>
+</div>
+
+<h3>T4 — ชุดวอลเปเปอร์ <span class="ok">ผ่าน</span></h3>
+<div class="test">
+<figure><img src="img/T4.jpg" alt="T4 วอลเปเปอร์ 3 ภาพ" loading="lazy"><figcaption>3 ภาพ ชุดเดียวกัน</figcaption></figure>
+<ul class="nums">
+<li><code>--ar 9:16 --hd --sref 212096204</code> ทั้ง 3 ภาพ · Relax · Fast = 0</li>
+<li>ขนาด 1648×2944 ต่อภาพ (ด้านยาว ≈ 2.9k px สูงกว่าที่คาด 2.7k) · ชุดดูเป็นเซ็ตเดียวกัน</li>
+</ul>
+</div>
+
+<h3>T5 — คิว Relax และ Upscale <span class="ok">ผ่าน</span></h3>
+<div class="test">
+<figure><img src="img/T5.jpg" alt="T5 งาน Relax และ upscale" loading="lazy"><figcaption>งาน Relax + Creative upscale</figcaption></figure>
+<ul class="nums">
+<li>รอ Relax 1 นาที 50 วินาที – 2 นาที 30 วินาที · มี 1 งานค้างที่ 90% จนต้องรันใหม่ → รวม ~6 นาที</li>
+<li>Creative upscale 1024→2048 ~2 นาที ใน <b>Relax ไม่เสีย Fast</b> (ขัดกับตัวเลข ~2 นาที Fast ในเอกสาร)</li>
+<li>ภาพที่สร้างด้วย <code>--hd</code> ไม่มีปุ่ม Upscale</li>
+</ul>
+</div>
+
+<h3>T6 — วิดีโอวนลูป <span class="ok">ผ่าน (ได้ตัวเลขต้นทุน)</span></h3>
+<div class="test">
+<figure><img src="img/T6-frame.jpg" alt="T6 เฟรมจากวิดีโอ" loading="lazy"><figcaption>เฟรมจากวิดีโอ SD 5 วินาที</figcaption></figure>
+<ul class="nums">
+<li>SD loop: เลือก Relax แล้ว <b>ไม่ถูกปฏิเสธ</b> แต่ระบบคิด Fast 1 นาที · 624×624 · 5 วินาที</li>
+<li>HD loop: Fast 7 นาที · 960×960 · 5 วินาที</li>
+<li>สรุปผลจริง: วิดีโอกิน Fast เสมอบน Standard · SD batch 1 ≈ 1 นาที (เอกสารบอก 2)</li>
+</ul>
+</div>
+
+<h3>T7 / บัญชี</h3>
+<ul>
+<li><b>T7 (ความเป็นส่วนตัว) ตรวจได้บางส่วน:</b> โปรไฟล์สาธารณะของท่าน (midjourney.com/@ชื่อผู้ใช้) แท็บ Archive แสดงผลงานของวันนี้ รวมภาพ T2 และวิดีโอ พร้อม prompt ล่าสุดใต้ชื่อ · ยังตรวจแบบ logged-out/Explore ไม่ได้ · ไม่พบรูปอัปโหลดต้นฉบับ</li>
+<li><b>บัญชี:</b> "Active until Nov 26, 2027" และมีปุ่ม "Uncancel plan" → ปิดต่ออายุอัตโนมัติแล้ว จ่ายครอบคลุมถึง 2027-11-26</li>
+</ul>
+
+<!-- 5 -->
+<h2>5. Fast vs Relax cheat sheet (Standard)</h2>
+<div class="tw"><table>
+<tr><th>งาน</th><th>โหมดที่ใช้</th><th>เสีย Fast?</th><th>ที่มา</th></tr>
+<tr><td>ภาพปกติ (SD)</td><td>Relax</td><td>ไม่เสีย (Relax ไม่จำกัดสำหรับภาพ)</td><td>เอกสารแผน</td></tr>
+<tr><td>ภาพ <code>--hd</code></td><td>Relax</td><td>ไม่เสีย ~2 นาที</td><td>ทดสอบ T2/T4</td></tr>
+<tr><td>Creative upscale → 2048</td><td>Relax</td><td>ไม่เสีย ~2 นาที</td><td>ทดสอบ T5</td></tr>
+<tr><td>วิดีโอ SD (batch 1)</td><td>Fast เสมอ</td><td>~1 นาที ต่อ 5 วินาที</td><td>ทดสอบ T6</td></tr>
+<tr><td>วิดีโอ HD (batch 1)</td><td>Fast เท่านั้น</td><td>~7 นาที</td><td>ทดสอบ T6 + เอกสาร ("Standard, Pro, and Mega plans can generate HD resolution videos, but only in Fast Mode.")</td></tr>
+<tr><td>Repeat / permutation / Max Upscale</td><td>ใช้ไม่ได้ใน Relax</td><td>—</td><td>เอกสาร GPU Speed</td></tr>
+</table></div>
+<div class="tip"><b>คำแนะนำ:</b> เอกสารทางการระบุ Relax สำหรับวิดีโอเป็นสิทธิ์ของ Pro/Mega เท่านั้น → อย่าหวังว่าจะรันวิดีโอฟรีบน Standard แม้ระบบจะไม่ปฏิเสธเมื่อกด · ปริมาณคร่าว ๆ จากตัวเลขเอกสาร: Fast 900 นาที/เดือน ≈ 112 ชุดวิดีโอ SD 4 ชิ้น หรือ 34 ชุดวิดีโอ HD 4 ชิ้น (ต้นทุนจริงต่อคลิป SD จากการทดสอบคือ 1 นาที ไม่ใช่ 2 จึงทำได้มากกว่านี้) · Fast เพิ่มเติมซื้อได้ USD 4/ชม. หมดอายุ 60 วัน คืนเงินไม่ได้</div>
+
+<!-- 6 -->
+<h2>6. กิจวัตรรายเดือนให้คุ้ม <small style="font-weight:400;color:var(--mu)">(คำแนะนำ)</small></h2>
+<div class="card"><ol style="margin:4px 0 0;padding-left:22px">
+<li><b>ภาพทั้งหมดรันใน Relax</b> (รวม <code>--hd</code> และ upscale) · ส่งงานเป็นชุดแล้วไปทำอย่างอื่น รอหลักนาที</li>
+<li><b>Fast 15 ชม./เดือนหมดอายุทุกเดือน แม้เป็นแผนรายปี</b> → ใช้หมดกับวิดีโอ: ทดสอบ SD batch 1 ก่อนค่อยเปิด HD</li>
+<li>ทำ moodboard / โค้ด sref ต่อแบรนด์ <b>ครั้งเดียว</b> แล้วใช้ซ้ำ (เลือกโค้ดจากลุคก่อน ตามบทเรียน T3)</li>
+<li>แบ่งหน้าที่: MJ ทำฉาก → Flow/Canva ใส่สินค้าจริงและข้อความ</li>
+<li>ไม่ซื้อ Fast เพิ่มจนกว่าวิดีโอจะพิสูจน์ว่าให้ผลคุ้ม</li>
+<li>จดบันทึกรายเดือน: Fast ใช้กี่นาที · ชิ้นที่ใช้งานจริงต่อธุรกิจ · ใช้ผลนี้ตัดสินใจต่ออายุเมื่อใกล้ 2027-11-26</li>
+</ol></div>
+
+<!-- 7 -->
+<h2>7. กฎแพลตฟอร์ม &amp; สิทธิ์</h2>
+<div class="cols">
+<div class="card"><h3>แพลตฟอร์มขาย</h3>
+<ul>
+<li><b>Etsy:</b> อนุญาตงานศิลป์ AI เมื่อผู้ขายใส่ความคิดสร้างสรรค์ของตนเอง "as long as they contribute their own creative input and follow Etsy's policies" · งานที่ใช้ prompt ต้องเปิดเผยการใช้ AI · ห้าม bot-generated, AI functional instructions (แพทเทิร์น/สูตร), prompt bundles</li>
+<li><b>Etsy ภาพรายการ:</b> ส่วนใหญ่ต้องมีรูปไม่ผ่านการแต่งอย่างน้อย 1 รูป · ไฟล์ดาวน์โหลดต้องมี preview ของเนื้อหาจริง · ภาพเสริมที่ AI แก้ได้ตราบเท่าที่ไม่ทำให้สินค้าดูต่างไป (คำแนะนำ: ภาพฉาก MJ ของ viora/venita ใช้เป็นภาพเสริมเท่านั้น)</li>
+<li><b>TikTok:</b> ต้องติดป้ายเนื้อหา AI ที่ "แสดงฉากหรือคนที่ดูสมจริง" · ไม่ติดอาจถูกลบ จำกัด หรือติดป้ายโดยทีมงาน (แนวทางชุมชน มีผล 2026-09-24)</li>
+<li><b>Shopee TH:</b> เนื้อหา AI ของบุคคลที่สามบนรายการสินค้าต้องระบุว่าสร้างโดย AI (ข้อ 3.3) และห้ามใช้ให้เข้าใจผิด (ข้อ 3.2.3) · <b>ยังไม่พบวิธีติดป้ายสำหรับรูปภาพ</b></li>
+<li><b>สคบ. (OCPB):</b> แนวทาง 2025-07-27 ให้แสดงการใช้ AI ให้เห็นชัด และขนาด/จำนวนสินค้าต้องตรงจริง</li>
+</ul></div>
+<div class="card"><h3>สิทธิ์ &amp; ความเป็นส่วนตัว</h3>
+<ul>
+<li><b>ความเป็นเจ้าของ:</b> บริษัทรายได้เกิน USD 1M/ปี ต้องใช้ Pro/Mega ถึงเป็นเจ้าของผลงาน · ท่านไม่เกิน → Standard เพียงพอ และยังเป็นเจ้าของหลังยกเลิก</li>
+<li><b>สาธารณะโดยค่าเริ่มต้น:</b> ToS §4 ผลงานเป็น "publicly viewable and remixable" และผู้ใช้ให้สิทธิ์ใช้เนื้อหา/ผลงานแบบถาวร · Standard ไม่มี Stealth (มีเฉพาะ Pro/Mega) · ผลแก้ไขรูปอัปโหลดใน Editor V8.X เห็นได้โดยสมาชิกอื่น</li>
+<li><b>ลิขสิทธิ์อ่อน:</b> สำนักงานลิขสิทธิ์สหรัฐ (2025-01-29) คุ้มครองเฉพาะส่วนที่มนุษย์สร้างสรรค์ ไม่ใช่แค่การเขียน prompt → <b>คำแนะนำ:</b> วอลเปเปอร์/โลโก้ดิบจาก MJ ป้องกันการลอกได้ยาก (กฎหมายไทยยังไม่ได้ค้นคว้า)</li>
+<li><b>ห้ามอัตโนมัติ:</b> ToS §1 ห้ามใช้เครื่องมืออัตโนมัติ · หนึ่งบัญชีต่อหนึ่งผู้ใช้ · ไม่มี API</li>
+</ul></div>
+</div>
+
+<!-- 8 -->
+<h2>8. แหล่งอ้างอิง</h2>
+<p style="margin:0 0 6px"><b>ตรวจข้อมูล 2026-11-26</b> (เวลาไทย) · เอกสาร Midjourney อ่านผ่าน help-center JSON endpoint (หน้า HTML คืน 403)</p>
+<ul class="src">
+<li><a href="https://docs.midjourney.com/hc/en-us/articles/27870484040333-Comparing-Midjourney-Plans">Comparing Midjourney Plans</a> (upd 2026-11-03)</li>
+<li><a href="https://docs.midjourney.com/hc/en-us/articles/32016412137741-GPU-Speed-Fast-Relax-Turbo">GPU Speed (Fast / Relax / Turbo)</a> (upd 2026-08-28)</li>
+<li><a href="https://docs.midjourney.com/hc/en-us/articles/37460773864589-Video">Video</a> (upd 2026-08-31)</li>
+<li><a href="https://docs.midjourney.com/hc/en-us/articles/27870521824653-Subscription-Fast-Time-Expiration">Fast Time Expiration</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/33570952624141-Purchasing-Extra-Fast-Time">Purchasing Extra Fast Time</a></li>
+<li><a href="https://docs.midjourney.com/hc/en-us/articles/25386088618253-Requesting-a-Refund">Requesting a Refund</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/25384024738573-Canceling-Your-Subscription">Canceling</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/27868888211213-Turning-Off-Automatic-Renewals">Turning Off Automatic Renewals</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/27870428114317-Upgrading-or-Downgrading-Your-Plan">Upgrading or Downgrading</a></li>
+<li><a href="https://docs.midjourney.com/hc/en-us/articles/32083055291277-Terms-of-Service">Terms of Service</a> (effective 2026-05-27) · <a href="https://docs.midjourney.com/hc/en-us/articles/27870375276557-Using-Images-Videos-Commercially">Using Images &amp; Videos Commercially</a></li>
+<li><a href="https://docs.midjourney.com/hc/en-us/articles/28014645615373-Keeping-Your-Creations-Private">Keeping Your Creations Private</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/32019750070669-Stealth-Mode">Stealth Mode</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/32764383466893-Editor">Editor</a></li>
+<li><a href="https://docs.midjourney.com/hc/en-us/articles/32199405667853-Version">Version</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/48495453462797-Edit-Model">Edit Model</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/32180011136653-Style-Reference">Style Reference</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/32804058614669-Upscalers">Upscalers</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/33329374594957-Image-Size-Resolution">Image Size &amp; Resolution</a> · <a href="https://docs.midjourney.com/hc/en-us/articles/32502277092109-Text-Generation">Text Generation</a></li>
+<li><a href="https://www.copyright.gov/newsnet/2025/1060.html">US Copyright Office NewsNet 1060</a> (2025-01-29)</li>
+<li><a href="https://help.etsy.com/hc/en-us/articles/360024112614-What-Can-I-Sell-on-Etsy">Etsy — What Can I Sell on Etsy?</a> · <a href="https://help.etsy.com/hc/en-us/articles/44297885802647-How-Do-Etsy-s-Listing-Image-Requirements-Apply-to-My-Listings">Etsy — Listing Image Requirements</a></li>
+<li><a href="https://www.tiktok.com/community-guidelines/integrity-authenticity/">TikTok Integrity &amp; Authenticity</a> · <a href="https://www.tiktok.com/transparency/en/supporting-responsible-transparent-ai-generated-content/">TikTok AIGC transparency</a></li>
+<li><a href="https://help.shopee.co.th/portal/4/article/171262">Shopee TH — AI Terms</a> (2025-02-21) · สคบ. แนวทาง AI (ocpb.go.th, nid=16705)</li>
+<li>เปรียบเทียบความสามารถ: <a href="https://artificialanalysis.ai/text-to-image/arena/leaderboard-text">Artificial Analysis</a> · <a href="https://arena.ai/leaderboard/text-to-image/art">arena.ai Art</a> · <a href="https://andrew.ooo/answers/chatgpt-images-2-5-vs-nano-banana-pro-vs-midjourney-v8-2-september-2026/">andrew.ooo</a> · <a href="https://curiousrefuge.com/blog/midjourney-v8-review">CuriousRefuge</a> (รีวิวรอง ความเชื่อมั่นปานกลาง)</li>
+<li>ผลทดสอบจริง: บัญชีของท่าน, 2026-11-26</li>
+</ul>
+
+<footer>ข้อจำกัด: ยังไม่ได้ตรวจหน้า Manage Subscription (สิทธิ์คืนเงิน) · ยังไม่ทดสอบสิทธิ์เห็นรูปอัปโหลดต้นฉบับแบบ logged-out · ไม่ได้ค้นกฎหมายลิขสิทธิ์ไทย · Shopee ยังไม่พบวิธีติดป้ายสำหรับรูป · ยังไม่ได้ทดสอบ T1 (Edit Model แก้ฉากหลังสินค้า — ผลเดิมจาก W-78 ไม่ผ่าน), T8 (family) และ T9 (หน้า Cancel/Manage Subscription)</footer>
+</div>
+</body>
+</html>
